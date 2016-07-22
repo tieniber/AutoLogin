@@ -6,25 +6,20 @@
     <icon />
 
     <properties>
-        <property key="backgroundColor" type="attribute">
-            <caption>Background Color</caption>
-            <category>Appearance</category>
-            <description>The background color of the widget.</description>
-            <attributeTypes>
-                <attributeType name="String" />
-            </attributeTypes>
-        </property>
-        <property key="messageString" type="string" required="true" defaultValue="">
-            <caption>Message</caption>
-            <category>Appearance</category>
-            <description>The message visible within the widget.</description>
-        </property>
-        <property key="mfToExecute" type="microflow" required="false" defaultValue="">
-            <caption>Microflow</caption>
+        <property key="fallbackMicroflow" type="microflow">
+            <caption>Fallback Microflow</caption>
             <category>Behavior</category>
-            <description>The microflow to execute on click.</description>
-            <returnType type="Boolean" />
+            <description>A microflow that navigates to another page, if there are no saved credentials, or the credentials are no good.</description>
+			<returnType type="Void" />
         </property>
+		<property key="loginUUIDAttribute" type="attribute">
+		 	<caption>Login UUID</caption>
+            <category>Behavior</category>
+            <description>The attribute containing the login UUID to use.</description>
+			<attributeTypes>
+				<attributeType name="String" />
+			</attributeTypes>
+		</property>
     </properties>
 </widget>
 
